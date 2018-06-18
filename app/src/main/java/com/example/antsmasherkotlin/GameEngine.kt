@@ -40,6 +40,8 @@ class GameEngine : Contract.GameEngine {
         gameView?.setPlayButtonVisibility(false)
         gameView?.clearView()
         ants.clear()
+        score = 0
+        gameView?.showScore(score)
         showNewAntRunnable.run()
     }
 
@@ -47,5 +49,6 @@ class GameEngine : Contract.GameEngine {
         ants.remove(ant)
         gameView?.hideAnt(ant)
         score++
+        gameView?.showScore(score)
     }
 }

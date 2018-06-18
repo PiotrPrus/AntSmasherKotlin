@@ -34,17 +34,16 @@ class MainActivity : AppCompatActivity(), Contract.GameView {
         antView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_ant))
         antView.scaleType = ImageView.ScaleType.FIT_CENTER
         antView.tag = ant
-        antView.requestLayout()
         antView.setOnClickListener {view: View? ->
             view?.let { engine.onAntClicked(view.tag as Ant) }
         }
         val antSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 56f, resources.displayMetrics)
         val layoutParams = FrameLayout.LayoutParams(antSize.toInt(), antSize.toInt())
-        val screenWidth = game_layout!!.width
-        val screenHeight = game_layout!!.height
+        val screenWidth = game_layout!!.width - antSize.toInt()
+        val screenHeight = game_layout!!.height - antSize.toInt()
         layoutParams.leftMargin = (ant.x * screenWidth).toInt()
         layoutParams.topMargin = (ant.y * screenHeight).toInt()
-        game_layout?.addView(antView)
+        game_layout?.addView(antView, layoutParams)
     }
 
     override fun hideAnt(antToHide: Ant) {
