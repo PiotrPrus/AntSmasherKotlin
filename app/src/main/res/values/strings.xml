@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AntSmasherKotlin</string>
+    <string name="main_outro_text">Game over</string>
+    <string name="main_intro_text">Click play button to start</string>
+    <string name="main_score_counter">Score: 0</string>
 </resources>
