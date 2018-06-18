@@ -4,7 +4,7 @@ interface Contract {
 
     interface GameView{
         fun showAnt(ant: Ant)
-        fun hideAnd(ant: Ant)
+        fun hideAnt(ant: Ant)
         fun showScore(score: Int)
         fun setIntroTextVisibility(visibility: Boolean)
         fun setGameOverTextVisibility(visibility: Boolean)
